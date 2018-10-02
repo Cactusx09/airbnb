@@ -8,6 +8,11 @@
 # install dependencies
 $ npm install # Or yarn install
 
+# copy this file
+https://drive.google.com/open?id=1xIxFoJ7RJuYY6rqHb50N-HZDE5PmTmrL
+# to
+$ \node_modules\vue-input-number
+
 # serve with hot reload at localhost:3000
 $ npm run dev
 

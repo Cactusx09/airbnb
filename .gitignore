@@ -1,6 +1,6 @@
 # dependencies
 node_modules/
-!node_modules/vue-input-number
+!node_modules/vue-input-number/*
 
 # logs
 npm-debug.log

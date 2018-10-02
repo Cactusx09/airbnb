@@ -1,0 +1,42 @@
+{
+  "name": "airbnbtips",
+  "version": "1.0.0",
+  "description": "Nuxt.js project",
+  "author": "cactusx09 <cactusx09@gmail.com>",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "precommit": "npm run lint"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.3.1",
+    "@nuxtjs/google-analytics": "^2.0.2",
+    "@nuxtjs/google-tag-manager": "^2.0.0",
+    "animate-backgrounds": "^0.1.6",
+    "animejs-hooks": "^0.1.1",
+    "axios": "^0.18.0",
+    "cookie-universal-nuxt": "^2.0.5",
+    "ios-inner-height": "^1.1.0",
+    "node-sass": "^4.9.2",
+    "nuxt": "^1.0.0",
+    "nuxt-validate": "^0.1.1",
+    "sass-loader": "^7.1.0",
+    "vue-anime": "^0.1.6",
+    "vue-animejs": "^1.0.1",
+    "vue-cookie": "^1.1.4",
+    "vue-style-loader": "^4.1.1"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.1",
+    "eslint": "^4.15.0",
+    "eslint-friendly-formatter": "^3.0.0",
+    "eslint-loader": "^1.7.1",
+    "eslint-plugin-vue": "^4.0.0",
+    "vue-input-number": "^0.1.5",
+    "webpack-bundle-analyzer": "^2.13.1"
+  }
+}

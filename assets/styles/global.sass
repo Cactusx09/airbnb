@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,600,900')
+
+// BY OLEXANDR DUHOVNUY. - http://vk.com/thoroughgoing1
+// ██████████████████████████████████████████████████████████████████████
+// ██                                                         ▒██████████
+// ██░░░▒░▒▒▒   ▒░░░░░░▒   ░░░░░░░░░░░░░▒     ▒▒▒▒▒▒▒▒▒░▒▒▒░▒░▓██████████
+// ██████████▒ ▒████████  ▓██████████████    ▓███████████████████████████
+// ██████████▒ ░████████  ▓██████████████    ▓███████████████████████████
+// ██████████▒ ░████████  ▓██████████████    ▓███▓ ░░░░░░░░░░░▓██████████
+// ██████████▒ ░████████                     ▓███▒            ▓██████████
+// ██████████▒ ░████████     deg ░▒▒▒▒░░░▒▒  ▓██████████████  ▓██████████
+// ██████████▒ ░████████  ▓█▓░    ▒▓███████░ ▓██████████████░ ▒█████▓░░░█
+// ██████████▒ ░████████  ▓██████▒     ▒▓██  ░▒░░░░░░░░░░░░▒  ▓█████▒   █
+// ██████████████████████████████████████████████████████████████████████
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video
+  margin: 0
+  padding: 0
+  border: 0
+  font-size: 100%
+  font: inherit
+  vertical-align: baseline
+  box-sizing: border-box
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section
+  display: block
+body
+  line-height: 1
+ol, ul
+  list-style: none
+blockquote, q
+  quotes: none
+blockquote:before, blockquote:after,
+q:before, q:after
+  content: ''
+  content: none
+table
+  border-collapse: collapse
+  border-spacing: 0
+html
+  color: #222
+  font-size: 1em
+  line-height: 1.4
+::-moz-selection
+  background: #b3d4fc
+  text-shadow: none
+::selection
+  background: #b3d4fc
+  text-shadow: none
+::focus
+  outline: none !important
+hr
+  display: block
+  height: 1px
+  border: 0
+  border-top: 1px solid #ccc
+  margin: 1em 0
+  padding: 0
+audio,canvas,iframe,img,svg,video
+  vertical-align: middle
+fieldset
+  border: 0
+  margin: 0
+  padding: 0
+textarea
+  resize: vertical
+input,textarea
+  box-sizing: border-box
+  border: none
+.browserupgrade
+  margin: 0.2em 0
+  background: #ccc
+  color: #000
+  padding: 0.2em 0
+a
+  text-decoration: none
+button
+  padding: 0
+  background: none
+  border: none
+
+body,html
+  font: 16px 'Nunito Sans', Helvetica, Helvetica Neue, Arial
+  cursor: default
+  color: $d
+.container
+  max-width: 2000px
+  width: 100%
+  padding-left: 20px
+  padding-right: 20px
+  margin-left: auto
+  margin-right: auto
+
+.g_btn
+  font-size: 1.25rem /* 20/16 */
+  border-radius: 32px
+  height: 48px
+  min-height: 48px
+  padding: 5px 20px
+  cursor: pointer
+  user-select: none
+  +flex(c,c,$i:i)
+  &.green
+    color: #FFF
+    font-weight: 600;
+    background-color: $g
+  &.white
+    font-size: 1rem
+    background-color: #fff
+    color: #664FEE
+
+.g_input
+  border: 1px solid  #bdbdbd
+  height: 42px
+  border-radius: 3px
+  box-shadow: inset 0 1px 3px 0 rgba(0,0,0,0.3)
+  font-size: 1rem /* 16/16 */
+  padding: 9px
+  transition: border $t/2
+  &:active
+    span
+      transform: scale(.92)
+  &:focus
+    background-color: #FFF8E1
+  &._error
+    background-color: #FFF8E1
+    border-color: red
+    border-width: 2px
+
+@media only screen and (max-width: 720.5px)
+  body,html
+    font-size: 15px
+
+@media only screen and (max-width: 520.5px)
+  body,html
+    font-size: 14px
+
+
+.fade-enter-active, .fade-leave-active
+  transition: opacity $t
+  pointer-events: all
+.fade-enter, .fade-leave-to
+  opacity: 0
+  pointer-events: none
+
+.fadeRouter-enter-active, .fadeRouter-leave-active
+  transition: opacity $t
+  pointer-events: all
+
+
+.fadeRouter-enter, .fadeRouter-leave-to
+  opacity: 0
+  pointer-events: none
+
+
+input[type=number]::-webkit-inner-spin-button
+  -webkit-appearance: none
+  cursor: pointer
+  display: block
+  width: 8px
+  color: #333
+  text-align: center
+  position: relative
+
+input[type=number]::-webkit-inner-spin-button:hover
+  color: #236DCD
+
+input[type=number]::-webkit-inner-spin-button:before,
+input[type=number]::-webkit-inner-spin-button:after
+  content: "^"
+  position: absolute
+  right: 0
+  font-family: monospace
+
+input[type=number]::-webkit-inner-spin-button:before
+  top: 0px
+
+input[type=number]::-webkit-inner-spin-button:after
+  bottom: 0px
+  -webkit-transform: rotate(180deg)

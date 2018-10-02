@@ -1,0 +1,118 @@
+.about
+  position: fixed
+  left: 0
+  top: 0;
+  height: 100%
+  width: 100%
+  +flex(c,c)
+  padding: 20px
+  z-index: 15
+
+.circle
+  width: 680px
+  height: 680px
+  background-color: #fff
+  border-radius: 50%
+  +flex(c,c,$d:c)
+  text-align: center
+  padding: 50px 73px
+  &__title
+    font-size: 2.25rem /* 36/16 */
+    font-weight: 900
+    margin-bottom: 30px
+    margin-top: auto
+  &__txt
+    font-size: 1.125rem /* 18/16 */
+    line-height: (24/18)
+    width: 460px
+    max-width: 100%
+    a
+      color: $o
+      transition: $t/3
+      &:hover
+        color: darken($o, 13)
+      span
+        position: relative
+        display: inline-block
+        &::before
+          content: ''
+          left: 0
+          bottom: 3px
+          height: 1px
+          background-color: $o
+          width: 100%
+          position: absolute
+    p
+      margin-bottom: 30px
+      color: #4A4A4A
+  .g_btn
+    color: #fff
+    background-color: $o
+    padding-left: 22px
+    padding-right: 27px
+    margin-top: auto
+    margin-bottom: 30px
+    transition: $t/2
+    &:hover
+      background-color: darken($o, 10)
+    span
+      padding-top: 2px
+    i
+      margin-top: -3px
+      margin-right: 15px
+
+
+@media only screen and (max-width: 750.5px)
+  .circle
+    width: 100%
+    height: 100%
+    border-radius: 10px
+
+@media only screen and (max-width: 600.5px)
+  .circle
+    padding: 30px
+    text-align: left
+    &__title
+      margin-right: auto
+      margin-bottom: 20px
+    &__txt
+      p
+        margin-bottom: 15px
+        font-size: 1rem
+    .g_btn
+      margin-bottom: 0
+      width: 48px
+      height: 48px
+      padding: 3px 3px 2px
+      background-color: #fff
+      border: 1px solid $o
+      i
+        margin-right: 0
+        g
+          stroke: $o !important
+      span
+        display: none
+
+@media only screen and (max-width: 400.5px)
+  .about
+    padding-left: 8px
+    padding-right: 8px
+  .circle
+    padding: 20px 15px
+    &__title
+      font-size: 1.7rem
+      margin-bottom: 10px
+    &__txt
+      p
+        font-size: 1.14rem
+        font-weight: 400
+
+@media only screen and (max-height: 600.5px)
+  .circle
+    padding: 20px 20px
+    min-height: 520px
+    .g_btn
+      margin-bottom: 0
+  .about
+    overflow: auto
+    position: static

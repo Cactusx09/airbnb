@@ -1,0 +1,358 @@
+
+$g: #12B84F;
+$y: #FFC107;
+$o: #FF7C42;
+$d: #111111;
+$t: .55s;
+
+@mixin flex($justify:fs,$align:fs,$d:null,$i:false,$w:false){
+    @if ($i){
+        display: inline-flex;
+    }@else{
+        display: flex;
+    }
+    @if ($w){
+        flex-wrap: wrap;
+    }
+    $jc:fs;
+    @if $justify==fs {
+        $jc: flex-start;
+    }@else if $justify==fe {
+        $jc: flex-end;
+    }@else if $justify==sb {
+        $jc: space-between;
+    }@else if $justify==sa {
+        $jc: space-around;
+    }@else if $justify==c {
+        $jc: center;
+    }
+    justify-content: $jc;
+    $ai:fs;
+    @if $align==fs {
+        $ai: flex-start;
+    }@else if $align==fe {
+        $ai: flex-end;
+    }@else if $align==s {
+        $ai: stretch;
+    }@else if $align==b {
+        $ai: baseline;
+    }@else if $align==c {
+        $ai: center;
+    }
+    align-items: $ai;
+    @if $d==c{
+        flex-direction: column;
+    }@else{
+        flex-direction: row;
+    }
+}
+@mixin placeholder {
+    &.placeholder { @content; }
+    &:-moz-placeholder { @content; }
+    &::-moz-placeholder { @content; }
+    &:-ms-input-placeholder { @content; }
+    &::-webkit-input-placeholder { @content; }
+}
+@mixin h_pseudo($c:$d, $time:$t){
+  span{
+    position: relative;
+    &:before{
+      content: '(';
+      position: absolute;
+      font-weight: 700;
+      left: -9px;
+      top: 50%;
+      transform: translateY(-50%) translateX(215%) scale(0.9);
+      line-height: 0.5;
+      color: $c;
+      font-size: inherit;
+      transition: $time;
+      opacity: 0;
+      pointer-events: none;
+    }
+    &:after{
+      content: ')';
+      position: absolute;
+      font-weight: 700;
+      right: -9px;
+      top: 50%;
+      transform: translateY(-50%) translateX(-215%) scale(0.9);
+      line-height: 0.5;
+      color: $c;
+      font-size: inherit;
+      transition: $time;
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+  &:hover{
+    span{
+      &:before,
+      &:after{
+        transform: translateY(-50%);
+        opacity: 1;
+      }
+    }
+  }
+}
+@mixin h_square($c:$d, $time:$t){
+  position: relative;
+  z-index: 0;
+  &:before{
+    content: '';
+    position: absolute;
+    left: (random(73)+9) + %;
+    top: (random(44)+9) + %;
+    width: (random(15)+3) + %;
+    height: (random(8)+16) + %;
+    transform: translateY(26px) translateX(25%) scale(1.3);
+    transition: $time;
+    opacity: 0;
+    pointer-events: none;
+    background-color: $c;
+    border-radius: 3px;
+    box-shadow: 9px 12px 18px rgba(0, 0, 0, 0.12);
+    z-index: -1;
+  }
+  &:after{
+    content: '';
+    position: absolute;
+    right: (random(61)+15) + %;
+    top: (random(53)+15) + %;
+    width: (random(12)+5) + %;
+    height: (random(36)+21) + %;
+    transform: translateY(-20px) translateX(-5%) scale(1.5);
+    transition: $time;
+    opacity: 0;
+    pointer-events: none;
+    background-color: $c;
+    border-radius: 3px;
+    box-shadow: 9px 12px 18px rgba(0, 0, 0, 0.12);
+    z-index: -1;
+  }
+  span{
+    &:before{
+      content: '';
+      position: absolute;
+      left: -9px;
+      top: (random(80)+9) + %;
+      width: (random(36)+7) + %;
+      height: (random(79)+18) + %;
+      transform: translateY(20px) translateX(179%) scale(0.7);
+      transition: $time;
+      opacity: 0;
+      pointer-events: none;
+      background-color: $c;
+      z-index: -1;
+      border-radius: 3px;
+      box-shadow: 9px 12px 18px rgba(0, 0, 0, 0.12);
+    }
+    &:after{
+      content: '';
+      position: absolute;
+      right: -9px;
+      top: (random(61)+15) + %;
+      width: (random(17)+5) + %;
+      height: (random(32)+21) + %;
+      transform: translateY(-20px) translateX(-171%) scale(0.7);
+      transition: $time;
+      opacity: 0;
+      pointer-events: none;
+      background-color: $c;
+      border-radius: 3px;
+      z-index: -1;
+      box-shadow: 9px 12px 18px rgba(0, 0, 0, 0.12);
+    }
+  }
+  &:hover{
+    &:before,
+    &:after{
+      transform: translateY(-50%);
+      opacity: 1;
+    }
+    span{
+      &:before,
+      &:after{
+        transform: translateY(-50%);
+        opacity: 1;
+      }
+    }
+  }
+}
+@mixin h_center_align($time:$t,$h:1px,$c:$d){
+  position: relative;
+  &:hover{
+    span{
+      &:before{
+        width: 55%;
+      }
+      &:after{
+        width: 55%;
+      }
+    }
+  }
+  span{
+    display: inline-block;
+    &:before{
+      content: '';
+      position: absolute;
+      width: 0;
+      left: 50%;
+      height: $h;
+      top: -8px;
+      background-color: $c;
+      transition: $time;
+      opacity: .5;
+    }
+    &:after{
+      content: '';
+      position: absolute;
+      width: 0;
+      right: 50%;
+      height: $h;
+      bottom: -11px;
+      background-color: $c;
+      transition: $time;
+      opacity: .5;
+    }
+  }
+}
+@mixin h_center($time:$t,$h:1px,$c:$d){
+  &:hover{
+    span{
+      &:before,
+      &:after{
+        width: 50%;
+      }
+    }
+  }
+  span{
+    position: relative;
+    display: inline-block;
+    &:before{
+      content: '';
+      position: absolute;
+      width: 0;
+      left: 50%;
+      height: $h;
+      bottom: -2px;
+      background-color: $c;
+      transition: $time*1.3;
+    }
+    &:after{
+      content: '';
+      position: absolute;
+      width: 0;
+      right: 50%;
+      height: $h;
+      bottom: -2px;
+      background-color: $c;
+      transition: $time*1.3;
+    }
+  }
+}
+@mixin h_center_rev($time:$t,$h:1px,$c:$d){
+  &:hover{
+    span{
+      &:before,
+      &:after{
+        width: 0%;
+      }
+    }
+  }
+  span{
+    position: relative;
+    &:before{
+      content: '';
+      position: absolute;
+      width: 50%;
+      left: 50%;
+      height: $h;
+      bottom: -2px;
+      background-color: $c;
+      transition: $time;
+    }
+    &:after{
+      content: '';
+      position: absolute;
+      width: 50%;
+      right: 50%;
+      height: $h;
+      bottom: -2px;
+      background-color: $c;
+      transition: $time;
+    }
+  }
+}
+@mixin h_left($time:$t,$h:1px,$c:$d){
+  &:hover{
+    span{
+      &:before{
+        width: 100%;
+      }
+    }
+  }
+  span{
+    position: relative;
+    display: inline-block;
+    &:before{
+      content: '';
+      position: absolute;
+      width: 0;
+      left: 0;
+      height: $h;
+      bottom: -2px;
+      background-color: $c;
+      transition: $time;
+    }
+  }
+}
+@mixin h_left_rev($time:$t,$h:1px,$c:$d){
+  &:hover{
+    span{
+      &:before{
+        width: 0;
+      }
+    }
+  }
+  span{
+    position: relative;
+    display: inline-block;
+    padding-bottom: 2px;
+    &:before{
+      content: '';
+      position: absolute;
+      width: 100%;
+      left: 0;
+      height: $h;
+      bottom: 0;
+      background-color: $c;
+      transition: $time;
+    }
+  }
+}
+@mixin h_link($time:$t,$c:$y,$c1:$y,$c2:$y,$c3:$d){
+  &:hover{
+    span{
+      color: $c;
+      &:before{
+        text-shadow: 9px 0 $c3, -9px 0 $c1, 0 0 $c2;
+      }
+    }
+  }
+  span{
+    position: relative;
+    &:before{
+      position: absolute;
+      bottom: -13px;
+      left: 50%;
+      color: transparent;
+      content: "•";
+      text-shadow: transparent 0px 0px;
+      font-size: 0.8rem;
+      transform: translateX(-50%);
+      pointer-events: none;
+      transition: $time;
+    }
+  }
+}
